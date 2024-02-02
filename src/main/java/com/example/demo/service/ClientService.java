@@ -25,5 +25,8 @@ public class ClientService {
     public void delete(Integer id){
         clientRepository.deleteById(id);
     }
+    public void update(Client client){
+        clientRepository.save(client);
+    }
 
 }

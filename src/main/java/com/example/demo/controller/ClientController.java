@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Client;
+import com.example.demo.model.Order;
 import com.example.demo.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,5 +34,10 @@ public class ClientController {
     @DeleteMapping ("clients/{id}")
     public void delete(@PathVariable("id") Integer id){
         clientService.delete(id);
+    }
+
+    @PutMapping("clients/{id}")
+    public void update(@RequestBody Client client, @PathVariable("id") Integer id){
+        clientService.update(client);
     }
 }

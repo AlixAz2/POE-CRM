@@ -26,4 +26,7 @@ public class OrderService {
     public void delete(Integer id){
         orderRepository.deleteById(id);
     }
+    public void update(Order order){
+        orderRepository.save(order);
+    }
 }

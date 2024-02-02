@@ -17,6 +17,7 @@ public class Client {
     private String zip_code;
     private String city;
     private String country;
+    @Column(columnDefinition = "int4")
     private State state;
 
     public Client() {

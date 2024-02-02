@@ -14,15 +14,20 @@ public class Order {
     private Client client;
     private Integer nb_days;
     private Double unit_price;
+    @Transient
     private Double total_exclude_taxe;
+    @Transient
     private Double total_with_taxe;
+    @Column(columnDefinition = "int4")
     private StateOrder state;
 
-    @PrePersist
-    private void calculs(){
-        this.total_exclude_taxe=unit_price * nb_days;
-        this.total_with_taxe = total_exclude_taxe * 1.2;
-    }
+    // SOlution pour gérer le calcul automatique des données : mais il est ,nécéssaire de modifier la structure de la bdd
+
+//    @PrePersist
+//    private void calculs(){
+//        this.total_exclude_taxe=unit_price * nb_days;
+//        this.total_with_taxe = total_exclude_taxe * 1.2;
+//    }
 
     public Order() {
     }

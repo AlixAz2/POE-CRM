@@ -33,4 +33,8 @@ public class OrderController {
     public void delete(@PathVariable("id") Integer id){
         orderService.delete(id);
     }
+    @PutMapping("orders/{id}")
+    public void update(@RequestBody Order order, @PathVariable("id") Integer id){
+        orderService.update(order);
+    }
 }
